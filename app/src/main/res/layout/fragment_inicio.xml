@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        tools:context=".ui.InicioFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/inicio_guideline_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/inicio_guideline_v9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/inicio_guideline_h1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/inicio_guideline_h9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inicio_iniciar_btn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@id/inicio_guideline_h9"
+            app:layout_constraintStart_toEndOf="@id/inicio_guideline_v1"
+            app:layout_constraintEnd_toStartOf="@id/inicio_guideline_v9"
+            android:text="@string/comenzar_boton"
+            android:textSize="24sp"
+            app:icon="@drawable/ic_baseline_arrow_forward_24"
+            app:iconGravity="textEnd"
+            app:iconPadding="16dp"
+            android:textColor="@color/white"
+            app:iconTint="@color/white"
+            />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toTopOf="@id/inicio_iniciar_btn"
+            app:layout_constraintTop_toBottomOf="@id/inicio_guideline_h1"
+            app:layout_constraintEnd_toStartOf="@id/inicio_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/inicio_guideline_v1"
+            android:src="@mipmap/ic_launcher"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

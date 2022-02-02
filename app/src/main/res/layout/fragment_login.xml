@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/iniciar_sesion_titulo"
+                app:menu="@menu/top_app_bar_empty"
+                app:titleTextColor="@color/white"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_guideline_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_guideline_v9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_guideline_h1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_guideline_h9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <LinearLayout
+            android:id="@+id/login_botones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/login_guideline_h9"
+            app:layout_constraintEnd_toStartOf="@id/login_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/login_guideline_v1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_iniciar_boton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/iniciar_sesion_boton"
+                android:textColor="@color/white"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/ic_baseline_login_24"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                app:iconPadding="16dp"
+               />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_registrar_boton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/registrarse_boton"
+                android:textColor="@color/white"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/ic_baseline_person_add_alt_1_24"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                app:iconPadding="16dp"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_contrasenia_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/contrasenia"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/login_botones"
+            app:layout_constraintEnd_toStartOf="@id/login_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/login_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_contrasenia_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_usuario_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/nombre_de_usuario"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/login_contrasenia_til"
+            app:layout_constraintEnd_toStartOf="@id/login_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/login_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_usuario_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusDown="@id/login_contrasenia_tie" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/login_logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@id/login_usuario_til"
+            app:layout_constraintEnd_toStartOf="@id/login_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/login_guideline_v1"
+            app:layout_constraintTop_toBottomOf="@id/login_guideline_h1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

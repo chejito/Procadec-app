@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/top_app_bar_empty"
+                app:title="@string/registro_titulo"
+                app:titleTextColor="@color/white"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/registro_guideline_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/registro_guideline_v9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/registro_guideline_h1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/registro_guideline_h9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <LinearLayout
+            android:id="@+id/registro_botones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/registro_guideline_h9"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registro_registrar_boton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="@string/registrarse_boton"
+                android:textColor="@color/white"
+                app:cornerRadius="50dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registro_cancelar_boton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="@string/cancelar_boton"
+                android:textColor="@color/white"
+                app:cornerRadius="50dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_contrasenia_rep_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/repetir_contrasenia"
+            android:inputType="textEmailAddress"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/registro_botones"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registro_contrasenia_rep_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_contrasenia_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/introducir_contrasenia"
+            android:inputType="textEmailAddress"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/registro_contrasenia_rep_til"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registro_contrasenia_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:nextFocusDown="@id/registro_contrasenia_rep_tie" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_email_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/introducir_email"
+            android:inputType="textEmailAddress"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/registro_contrasenia_til"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registro_email_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@id/registro_contrasenia_tie" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_usuario_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/introducir_nombre_usuario"
+            android:inputType="textPersonName"
+            app:boxStrokeWidth="2dp"
+            app:cornerRadius="15dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/registro_email_til"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registro_usuario_tie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@id/registro_email_tie" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/registro_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@id/registro_usuario_til"
+            app:layout_constraintEnd_toStartOf="@id/registro_guideline_v9"
+            app:layout_constraintStart_toEndOf="@id/registro_guideline_v1"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

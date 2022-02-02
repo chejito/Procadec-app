@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="false"
+        android:elevation="4dp"
+        android:focusable="false"
+        android:orientation="vertical"
+        app:cardCornerRadius="15dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/item_categoria_nombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                tools:text="Categoría"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_categoria_productos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="16dp"
+                tools:text="@string/numero_productos_placeholder"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_categoria_nombre" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/item_categoria_botones"
+                android:layout_width="0dp"
+                android:paddingBottom="4dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_categoria_productos">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_categoria_boton_editar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/editar"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_edit_24"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_categoria_boton_eliminar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/eliminar"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_delete_24"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/white"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

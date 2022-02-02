@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="false"
+        android:elevation="4dp"
+        android:focusable="false"
+        android:orientation="vertical"
+        app:cardCornerRadius="15dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/item_producto_referencia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/referencia_placeholder" />
+
+            <TextView
+                android:id="@+id/item_producto_descripcion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_producto_referencia"
+                tools:text="@string/descripcion_placeholder" />
+
+            <TextView
+                android:id="@+id/item_producto_cantidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_producto_descripcion"
+                tools:text="@string/cantidad_de_producto_placeholder" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/item_producto_botones1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_producto_cantidad">
+
+                <ImageButton
+                    android:id="@+id/producto_restar_boton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/color_secondary"
+                    android:src="@drawable/ic_baseline_horizontal_rule_24"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/producto_nueva_cantidad_edit"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/vista_rectangular"
+                    android:paddingTop="10dp"
+                    android:text="@string/cantidad_placeholder"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_secondary_variant"
+                    android:textSize="24dp"
+                    app:boxStrokeWidth="2dp"
+                    app:cornerRadius="15dp"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productos_nueva_descripcion_til" />
+
+
+                <ImageButton
+                    android:id="@+id/producto_sumar_boton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/color_secondary"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:tint="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/item_producto_botones2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_producto_botones1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_producto_boton_recibir"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/recibir"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_login_24"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_producto_boton_enviar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:paddingStart="30dp"
+                    android:text="@string/enviar"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_logout_24"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/item_producto_botones3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_producto_botones2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_producto_boton_editar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/editar"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_edit_24"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_producto_boton_eliminar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/eliminar"
+                    android:textColor="@color/white"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/ic_baseline_delete_24"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
